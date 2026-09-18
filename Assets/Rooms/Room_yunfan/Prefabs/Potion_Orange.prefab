@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1187667187527093960}
   - component: {fileID: 1702325496192798227}
   - component: {fileID: -2251140407613534030}
+  - component: {fileID: -97734800890388196}
   m_Layer: 0
   m_Name: Potion_Orange
   m_TagString: Untagged
@@ -51,8 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleWobble
   wobbleAngle: 15
-  wobbleDuration: 1
-  wobbleCount: 4
+  duration: 1
+  count: 4
 --- !u!65 &-1187667187527093960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -231,6 +232,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &-97734800890388196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926596985716915762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4a2e9f901445948b46db065bbd2bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PotionDrink
+  hiddenText: {fileID: 0}
 --- !u!1001 &818556260788529055
 PrefabInstance:
   m_ObjectHideFlags: 0
