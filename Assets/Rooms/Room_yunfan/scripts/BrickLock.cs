@@ -21,8 +21,7 @@ public class BrickLock : MonoBehaviour
         {
             time += Time.deltaTime;
             float t = time / duration;
-            float eased = t * t * (3f - 2f * t);
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, eased);
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, t);
             yield return null;
         }
 

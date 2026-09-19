@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - DoorKey
   - Hammer
+  - ItemSpawnPoint
   layers:
   - Default
   - TransparentFX
