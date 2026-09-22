@@ -30,4 +30,9 @@ public class CollectionManager : MonoBehaviour
     {
         collectedIds.Add(scrollId);
     }
+    
+    public bool IsCollected(string scrollId)
+    {
+        return collectedIds.Contains(scrollId);
+    }
 }

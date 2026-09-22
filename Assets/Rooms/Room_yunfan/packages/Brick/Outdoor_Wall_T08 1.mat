@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mid_hide_Red
+  m_Name: Outdoor_Wall_T08 1
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,16 +24,16 @@ Material:
     RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: _BaseMap
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 24fdd266db3d7fc4c9fc3971afb9a07f, type: 3}
-        m_Scale: {x: 0.4, y: 0.2}
+        m_Texture: {fileID: 2800000, guid: 14046fe196c35754a801dcd9efccbcca, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 3bba7f152ad295d42a249d2187128acd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4e61cbb92553d024daa25df92b1138fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -53,19 +53,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 24fdd266db3d7fc4c9fc3971afb9a07f, type: 3}
-        m_Scale: {x: 0.4, y: 0.2}
+        m_Texture: {fileID: 2800000, guid: 14046fe196c35754a801dcd9efccbcca, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 948ef0fb85cfa5c4cb7125f1bc273460, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45d2e40f430f89a4ba2756a306478d39, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 197157c7bf4f923448f96b48430e54f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: b28bc6a4acb80bb489084781df4e91e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -102,7 +102,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.085
+    - _Glossiness: 0.109
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -110,7 +110,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.4
+    - _Smoothness: 0.109
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -121,13 +121,13 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.8113208, g: 0.80876946, b: 0.80876946, a: 1}
-    - _Color: {r: 0.8113207, g: 0.80876946, b: 0.80876946, a: 1}
+    - _BaseColor: {r: 0, g: 0, b: 0.8039216, a: 1}
+    - _Color: {r: 0, g: 0, b: 0.8039216, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3424132706961474828
+--- !u!114 &3061356858906500912
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
