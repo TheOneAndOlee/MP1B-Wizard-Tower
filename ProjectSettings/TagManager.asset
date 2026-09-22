@@ -8,6 +8,7 @@ TagManager:
   - Hammer
   - ItemSpawnPoint
   - FrostBolt
+  - MagicNullifier
   layers:
   - Default
   - TransparentFX
