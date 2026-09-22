@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class FrostBook : MonoBehaviour
 {
-    [SerializeField] private GameObject barrier;    
+    // [SerializeField] private GameObject barrier;    
     
     [SerializeField] private GameObject frostBoltPrefab;
     
-    private MagicBarrier _magicBarrier;
+    private MeshCollider  _meshCollider;
+    private Rigidbody _rigidbody;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GetComponent<Light>().enabled = true;
-        GetComponent<Rigidbody>().isKinematic = false;
-        _magicBarrier = barrier.GetComponent<MagicBarrier>();
-        _magicBarrier.enableBook.AddListener(EnableFunctionality);
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.useGravity = false;
+        
+        _meshCollider = GetComponent<MeshCollider>();
+        _meshCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,10 +25,13 @@ public class FrostBook : MonoBehaviour
         
     }
 
-    void EnableFunctionality()
+    public void EnableFunctionality()
     {
+        
         GetComponent<Light>().enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
+        // _rigidbody.isKinematic = true;
+        _rigidbody.useGravity = true;
+        _meshCollider.enabled = true;
     }
 
     void FireBolt()

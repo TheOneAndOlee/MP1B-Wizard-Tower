@@ -12,7 +12,7 @@ public class MagicBarrier : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Material mat =  frostBook.GetComponent<Renderer>().material;
+        _mat =  frostBook.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -20,9 +20,17 @@ public class MagicBarrier : MonoBehaviour
     {
         
     }
-    
-    public void SelfDestruct()
+
+    void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("MagicNullifier"))
+        {
+            SelfDestruct();
+        }
+    }
+    
+    private void SelfDestruct()
+    { 
         StartCoroutine(FadeOut(2));
     }
 
