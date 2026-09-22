@@ -3161,12 +3161,12 @@ MonoBehaviour:
 
     1. Put the correct magical crystal into pot to get
     the potion (Red is related to strength, green is related to teleportation, and
-    purple-yellow is related to eyesight. It might also apply to other objects, like
-    buttons.).
+    purple-yellow is related to eyesight).
 
 
-    2. Drink(Press Trigger) the potion to see invisible text on
-    the other wall (You can only see these words from a certain angle). '
+    2. Drink(Press Trigger) the potion
+    to see invisible text on the other wall (You can only see these words from a
+    certain angle). '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4981,10 +4981,10 @@ MonoBehaviour:
 
     1. Find the hammer hidden somewhere.
 
-    1. Use the
+    2. Use the
     hammer to break a specific part of the wall, and find the key inside it.
 
-    2.
+    3.
     Use the key to open the door. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5957,7 +5957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HiddenTextVisibility
   viewer: {fileID: 1031322419}
-  viewAngle: 10
+  viewAngle: 5
   canvasGroup: {fileID: 2058260815}
 --- !u!1 &2144498599
 GameObject:
