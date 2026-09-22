@@ -8,10 +8,17 @@ public class DoorLock : MonoBehaviour
     public float duration = 1.2f;
     private bool triggered = false;
 
+    public GameObject brick;
+
     private void OnTriggerEnter(Collider other)
     {
         if (triggered) return;
         if (!other.CompareTag("DoorKey")) return;
+        if (brick != null)
+        {
+            BrickHighlight highlight = brick.GetComponent<BrickHighlight>();
+            highlight.Show();
+        }
 
         triggered = true;
         StartCoroutine(Open());
