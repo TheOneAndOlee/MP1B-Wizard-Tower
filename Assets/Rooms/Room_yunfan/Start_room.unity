@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b8859c2471f2c44a8d78019cb08679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnlyTeleport
-  sceneName: yunfan_room
+  sceneName: OsmondRoom
 --- !u!114 &1160843574
 MonoBehaviour:
   m_ObjectHideFlags: 0
