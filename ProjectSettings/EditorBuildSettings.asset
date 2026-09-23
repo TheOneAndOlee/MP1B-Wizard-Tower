@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Rooms/Room_yunfan/Start_room.unity
+    guid: 0ca3fa1f88810d345803dca9e77c6f42
+  - enabled: 1
     path: Assets/Rooms/Room_yunfan/yunfan_room.unity
     guid: 32c31f550891ffb478add6e388f249f5
   - enabled: 1
     path: Assets/Rooms/Room_yunfan/Win_room.unity
     guid: 6df0b1cd4ff08d64e99fefcfc6926cba
-  - enabled: 1
-    path: Assets/Rooms/Room_yunfan/Start_room.unity
-    guid: 0ca3fa1f88810d345803dca9e77c6f42
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bd122fdd72c1f594fb754d167576c511, type: 2}
