@@ -293,3 +293,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb8cd8383c46c14da23e3c16d2a6399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicAbsorbingCrystal
+  activatedMaterial: {fileID: 0}
