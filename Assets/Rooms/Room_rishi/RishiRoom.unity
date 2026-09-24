@@ -3631,7 +3631,7 @@ MonoBehaviour:
   room: {fileID: 1954745357}
   speed: 3.5
   jumpHeight: 1.1
-  preferDesktopInEditor: 1
+  preferDesktopInEditor: 0
 --- !u!143 &1707381523
 CharacterController:
   m_ObjectHideFlags: 0
