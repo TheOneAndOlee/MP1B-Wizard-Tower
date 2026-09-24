@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using System.Collections;
+using UnityEngine.XR.Management;
 
 [RequireComponent(typeof(CharacterController))]
 public class DesktopRoomController : MonoBehaviour
@@ -24,14 +26,57 @@ public class DesktopRoomController : MonoBehaviour
 
     private void Awake()
     {
-        desktopMode = (Application.isEditor && preferDesktopInEditor) || !XRSettings.isDeviceActive;
-        if (playerCamera != null) playerCamera.gameObject.SetActive(desktopMode);
-        if (xrRig != null) xrRig.SetActive(!desktopMode);
         motor = GetComponent<CharacterController>();
+
+        // Leave the rig available while XR initializes.
+        if (xrRig != null) xrRig.SetActive(true);
+        if (playerCamera != null) playerCamera.gameObject.SetActive(false);
+        motor.enabled = false;
+    }
+
+    private IEnumerator Start()
+    {
+        var settings = XRGeneralSettings.Instance;
+        var manager = settings != null ? settings.Manager : null;
+
+        // XR initialization can finish after Awake.
+        float deadline = Time.realtimeSinceStartup + 5f;
+        while (manager != null &&
+            manager.automaticLoading &&
+            !manager.isInitializationComplete &&
+            Time.realtimeSinceStartup < deadline)
+        {
+            yield return null;
+        }
+
+        bool xrReady = manager != null &&
+                    manager.activeLoader != null &&
+                    manager.automaticRunning;
+
+        desktopMode = !xrReady ||
+                    (Application.isEditor && preferDesktopInEditor);
+
+        if (xrRig != null) xrRig.SetActive(!desktopMode);
+        if (playerCamera != null)
+            playerCamera.gameObject.SetActive(desktopMode);
         motor.enabled = desktopMode;
-        if (!desktopMode) { enabled = false; return; }
-        if (room == null) room = FindFirstObjectByType<RishiRoomProgress>();
-        if (playerCamera == null) { Debug.LogError("Desktop player camera reference is missing."); enabled = false; return; }
+
+        if (!desktopMode)
+        {
+            enabled = false;
+            yield break;
+        }
+
+        if (room == null)
+            room = FindFirstObjectByType<RishiRoomProgress>();
+
+        if (playerCamera == null)
+        {
+            Debug.LogError("Desktop player camera reference is missing.");
+            enabled = false;
+            yield break;
+        }
+
         playerCamera.stereoTargetEye = StereoTargetEyeMask.None;
         playerCamera.nearClipPlane = .05f;
     }
