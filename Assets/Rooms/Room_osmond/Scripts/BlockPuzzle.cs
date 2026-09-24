@@ -28,8 +28,29 @@ public class BlockPuzzle : MonoBehaviour
     {
         if (socket1.element != correctOrder[0] || socket2.element != correctOrder[1] || socket3.element != correctOrder[2] || socket4.element != correctOrder[3])
         {
+            if (socket1.element != correctOrder[0])
+            {
+                Debug.Log("Socket 1 is incorrect");
+            }
+
+            if (socket2.element != correctOrder[1])
+            {
+                Debug.Log("Socket 2 is incorrect");
+            }
+
+            if (socket3.element != correctOrder[2])
+            {
+                Debug.Log("Socket 3 is incorrect");
+            }
+
+            if (socket4.element != correctOrder[3])
+            {
+                Debug.Log("Socket 4 is incorrect");
+            }
             return;
         }
+        
+        Debug.Log("Puzzle Complete!");
         
         puzzleComplete.Invoke();
     }

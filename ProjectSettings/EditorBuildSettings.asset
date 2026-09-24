@@ -21,5 +21,7 @@ EditorBuildSettings:
     path: Assets/Rooms/Room_yunfan/Win_room.unity
     guid: 6df0b1cd4ff08d64e99fefcfc6926cba
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 944c22c857835564c81a54ce3058d9a9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ee4533c9cb721694cb0f057c61f7526b, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bd122fdd72c1f594fb754d167576c511, type: 2}

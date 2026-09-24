@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BlockHolder : MonoBehaviour
 {
@@ -15,12 +16,24 @@ public class BlockHolder : MonoBehaviour
         
     }
 
-    public void SetElement(ElementalCube cube)
+    public void SetElement(SelectEnterEventArgs args)
     {
-        element = cube.element;
+        GameObject cube = args.interactableObject.transform.gameObject;
+        
+        if (cube.GetComponent<ElementalCube>() != null)
+        {
+            Debug.Log("Setting element to " + cube.GetComponent<ElementalCube>().element);
+            element = cube.GetComponent<ElementalCube>().element;
+        }
+        else
+        {
+            Debug.LogWarning("Inputted object isn't an elemental cube");
+        }
+        // element = cube.element
+        
     }
 
-    public void RemoveElement()
+    public void RemoveElement(SelectExitEventArgs args)
     {
         element = Element.None;
     }

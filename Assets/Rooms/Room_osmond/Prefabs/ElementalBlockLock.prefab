@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 7252759691034145820}
   - component: {fileID: 1061211876692305815}
   - component: {fileID: 2164611029901936074}
+  - component: {fileID: 434568369854428027}
   m_Layer: 0
   m_Name: SocketInteractor1 (1)
   m_TagString: Untagged
@@ -177,6 +178,18 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2164611029901936074}
+        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
+        m_MethodName: SetElement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7277351873587920478, guid: 6f45fe09ef71bd74d87a08a9e3bebdac, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8617479215826117702}
         m_TargetAssemblyTypeName: BlockPuzzle, Assembly-CSharp
         m_MethodName: CheckCorrectness
@@ -184,18 +197,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2164611029901936074}
-        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
-        m_MethodName: SetElement
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ElementalCube, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -242,6 +243,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockHolder
   element: 0
+--- !u!65 &434568369854428027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762868932949223950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.684489, y: 0.59274995, z: 0.6516762}
+  m_Center: {x: 0, y: -0.045869514, z: -0.04290378}
 --- !u!1 &1797255254092956945
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +275,7 @@ GameObject:
   - component: {fileID: 711223461434242699}
   - component: {fileID: 6865725909136699746}
   - component: {fileID: 7802231227250538139}
+  - component: {fileID: 208968872951603878}
   m_Layer: 0
   m_Name: SocketInteractor1 (3)
   m_TagString: Untagged
@@ -307,6 +330,18 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7802231227250538139}
+        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
+        m_MethodName: SetElement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7277351873587920478, guid: 6f45fe09ef71bd74d87a08a9e3bebdac, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8617479215826117702}
         m_TargetAssemblyTypeName: BlockPuzzle, Assembly-CSharp
         m_MethodName: CheckCorrectness
@@ -314,18 +349,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7802231227250538139}
-        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
-        m_MethodName: SetElement
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ElementalCube, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -372,6 +395,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockHolder
   element: 0
+--- !u!65 &208968872951603878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797255254092956945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.794714, y: 0.52220696, z: 0.62499183}
+  m_Center: {x: 0.0071924925, y: -0.051392436, z: -0.01378569}
 --- !u!1 &2302351929547479823
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +763,7 @@ GameObject:
   - component: {fileID: 80032952892969664}
   - component: {fileID: 1366582292867032099}
   - component: {fileID: 6636020877841297931}
+  - component: {fileID: 8480993785584324949}
   m_Layer: 0
   m_Name: SocketInteractor1
   m_TagString: Untagged
@@ -773,6 +818,18 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6636020877841297931}
+        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
+        m_MethodName: SetElement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7277351873587920478, guid: 6f45fe09ef71bd74d87a08a9e3bebdac, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8617479215826117702}
         m_TargetAssemblyTypeName: BlockPuzzle, Assembly-CSharp
         m_MethodName: CheckCorrectness
@@ -780,18 +837,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6636020877841297931}
-        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
-        m_MethodName: SetElement
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ElementalCube, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -838,6 +883,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockHolder
   element: 0
+--- !u!65 &8480993785584324949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4296452364914876927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.5147599, z: 0.598126}
+  m_Center: {x: 0, y: -0.050738767, z: -0.0456163}
 --- !u!1 &5797359959606209579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,11 +1071,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d255fea98aa712e428dfedf418158964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockPuzzle
+  puzzleComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MetalCage, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   correctOrder: 03000000040000000100000002000000
-  socket1: {fileID: 1366582292867032099}
-  socket2: {fileID: 0}
-  socket3: {fileID: 0}
-  socket4: {fileID: 0}
+  socket1: {fileID: 6636020877841297931}
+  socket2: {fileID: 2164611029901936074}
+  socket3: {fileID: 7230395627987289432}
+  socket4: {fileID: 7802231227250538139}
 --- !u!1 &6230834372498084371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1326,7 @@ GameObject:
   - component: {fileID: 1205917273320024938}
   - component: {fileID: 6856634814186108334}
   - component: {fileID: 7230395627987289432}
+  - component: {fileID: 7459606822563970273}
   m_Layer: 0
   m_Name: SocketInteractor1 (2)
   m_TagString: Untagged
@@ -1299,6 +1381,18 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7230395627987289432}
+        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
+        m_MethodName: SetElement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7277351873587920478, guid: 6f45fe09ef71bd74d87a08a9e3bebdac, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8617479215826117702}
         m_TargetAssemblyTypeName: BlockPuzzle, Assembly-CSharp
         m_MethodName: CheckCorrectness
@@ -1306,18 +1400,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7230395627987289432}
-        m_TargetAssemblyTypeName: BlockHolder, Assembly-CSharp
-        m_MethodName: SetElement
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ElementalCube, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1364,3 +1446,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockHolder
   element: 0
+--- !u!65 &7459606822563970273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623007487934435865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7312691, y: 0.5464331, z: 0.6532018}
+  m_Center: {x: 0.039033666, y: -0.053384364, z: 0.039847672}
