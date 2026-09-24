@@ -19,6 +19,8 @@ public class DesktopRoomController : MonoBehaviour
     private RishiSeal targetSeal;
     private RishiKey targetKey;
     private CollectScroll targetScroll;
+    private RishiKeyhole targetKeyhole;
+    private RishiKey heldKey;
 
     private void Awake()
     {
@@ -69,37 +71,87 @@ public class DesktopRoomController : MonoBehaviour
         }
         verticalSpeed -= 9.81f * Time.deltaTime;
         motor.Move((Vector3.ClampMagnitude(move, 1) * speed + Vector3.up * verticalSpeed) * Time.deltaTime);
+        if (heldKey != null)
+        {
+            heldKey.transform.position = playerCamera.transform.position
+                + playerCamera.transform.forward * .8f
+                + playerCamera.transform.right * .22f;
+            heldKey.transform.rotation = playerCamera.transform.rotation;
+        }
         UpdateTarget();
         if (clicked || use)
         {
-            if (targetSeal != null) targetSeal.Interact();
-            else if (targetKey != null) targetKey.DesktopCollect();
+            if (heldKey != null)
+            {
+                if (targetKeyhole != null && targetKeyhole.TryInsert(heldKey))
+                {
+                    heldKey = null;
+                }
+                else if (targetKeyhole == null)
+                {
+                    var body = heldKey.GetComponent<Rigidbody>();
+                    if (body != null)
+                    {
+                        body.isKinematic = false;
+                        body.useGravity = true;
+                    }
+                    heldKey = null;
+                }
+            }
+            else if (targetKey != null)
+            {
+                heldKey = targetKey;
+                var body = heldKey.GetComponent<Rigidbody>();
+                if (body != null)
+                {
+                    body.linearVelocity = Vector3.zero;
+                    body.angularVelocity = Vector3.zero;
+                    body.useGravity = false;
+                    body.isKinematic = true;
+                }
+            }
+            else if (targetSeal != null) targetSeal.Interact();
             else if (targetScroll != null && room != null) room.CollectRecipe(targetScroll);
-            
         }
     }
 
     private void UpdateTarget()
     {
-        targetSeal = null; targetKey = null; targetScroll = null; actionable = false;
+        targetSeal = null;
+        targetKey = null;
+        targetKeyhole = null;
+        targetScroll = null;
+        actionable = false;
         prompt = "";
+
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        var hits = Physics.RaycastAll(ray, 6f, ~0, QueryTriggerInteraction.Ignore);
+        var hits = Physics.RaycastAll(ray, 6f, ~0, QueryTriggerInteraction.Collide);
         Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
         foreach (var hit in hits)
         {
-            // Ignore our own player collider, but never click through room walls or gates.
             if (hit.transform.IsChildOf(transform)) continue;
             if (xrRig != null && hit.transform.IsChildOf(xrRig.transform)) continue;
+            if (heldKey != null && hit.transform.IsChildOf(heldKey.transform)) continue;
+
+            targetKeyhole = hit.collider.GetComponentInParent<RishiKeyhole>();
             targetSeal = hit.collider.GetComponentInParent<RishiSeal>();
             targetKey = hit.collider.GetComponentInParent<RishiKey>();
             targetScroll = hit.collider.GetComponentInParent<CollectScroll>();
-            actionable = targetSeal != null || targetKey != null || targetScroll != null;
-            if (targetSeal != null) prompt = "E / click: interact";
-            else if (targetKey != null) prompt = "E / click: collect key";
-            else if (targetScroll != null) prompt = room != null && room.CanCollectScroll ?
-                "E / click: collect scroll" : "Sealed";
-            else prompt = "";
+
+            actionable = targetKeyhole != null || targetSeal != null ||
+                        targetKey != null || targetScroll != null;
+
+            if (targetKeyhole != null)
+                prompt = heldKey != null ? "E / click: insert key" : "";
+            else if (targetKey != null && heldKey == null)
+                prompt = "E / click: pick up key";
+            else if (targetSeal != null)
+                prompt = "E / click: interact";
+            else if (targetScroll != null)
+                prompt = room != null && room.CanCollectScroll
+                    ? "E / click: collect scroll" : "Sealed";
+
             break;
         }
     }

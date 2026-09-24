@@ -78,7 +78,7 @@ public class RishiSmashPuzzle : MonoBehaviour
     public void BlockCleared()
     {
         StoneMoved = true;
-        room.strengthKey.SetActive(true); clue.gameObject.SetActive(true);
+        room.RevealStrengthKey(); clue.gameObject.SetActive(true);
         room.Notify("");
     }
     public void WallImpact() { room.Notify(""); }
