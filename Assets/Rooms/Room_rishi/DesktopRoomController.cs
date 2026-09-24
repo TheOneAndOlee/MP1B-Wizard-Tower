@@ -26,45 +26,22 @@ public class DesktopRoomController : MonoBehaviour
 
     private void Awake()
     {
-        motor = GetComponent<CharacterController>();
+        // Choose desktop only when explicitly requested in the Editor.
+        desktopMode = Application.isEditor && preferDesktopInEditor;
 
-        // Leave the rig available while XR initializes.
-        if (xrRig != null) xrRig.SetActive(true);
-        if (playerCamera != null) playerCamera.gameObject.SetActive(false);
-        motor.enabled = false;
-    }
-
-    private IEnumerator Start()
-    {
-        var settings = XRGeneralSettings.Instance;
-        var manager = settings != null ? settings.Manager : null;
-
-        // XR initialization can finish after Awake.
-        float deadline = Time.realtimeSinceStartup + 5f;
-        while (manager != null &&
-            manager.automaticLoading &&
-            !manager.isInitializationComplete &&
-            Time.realtimeSinceStartup < deadline)
-        {
-            yield return null;
-        }
-
-        bool xrReady = manager != null &&
-                    manager.activeLoader != null &&
-                    manager.automaticRunning;
-
-        desktopMode = !xrReady ||
-                    (Application.isEditor && preferDesktopInEditor);
-
-        if (xrRig != null) xrRig.SetActive(!desktopMode);
         if (playerCamera != null)
             playerCamera.gameObject.SetActive(desktopMode);
+
+        if (xrRig != null)
+            xrRig.SetActive(!desktopMode);
+
+        motor = GetComponent<CharacterController>();
         motor.enabled = desktopMode;
 
         if (!desktopMode)
         {
             enabled = false;
-            yield break;
+            return;
         }
 
         if (room == null)
@@ -74,7 +51,7 @@ public class DesktopRoomController : MonoBehaviour
         {
             Debug.LogError("Desktop player camera reference is missing.");
             enabled = false;
-            yield break;
+            return;
         }
 
         playerCamera.stereoTargetEye = StereoTargetEyeMask.None;
