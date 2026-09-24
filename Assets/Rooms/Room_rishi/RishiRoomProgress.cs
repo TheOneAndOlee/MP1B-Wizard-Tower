@@ -7,7 +7,7 @@ public class RishiRoomProgress : MonoBehaviour
     public GameObject runeKey, strengthKey, hiddenKey, strengthSeal;
     public GameObject stoneBlock, secretPanel, hiddenScroll, exitBarrier;
     public TextMesh status;
-    public string nextScene = "Start_room";
+    public string nextScene = "yunfan_room";
 
     public int RuneCount { get; private set; }
     public int KeyCount { get; private set; }
@@ -32,8 +32,7 @@ public class RishiRoomProgress : MonoBehaviour
     {
         // The existing scene has "yunfan_room" serialized in its Inspector.
         // Correct that old value without requiring an edit to the scene asset.
-        if (nextScene == "yunfan_room")
-            nextScene = "Start_room";
+        nextScene = "yunfan_room";
 
         // The three old yellow objects are spawn markers, not the keys.
         SetVisible(runeKey, false);
